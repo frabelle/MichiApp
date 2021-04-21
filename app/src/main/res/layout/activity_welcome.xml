@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/crop"
     android:forceDarkAllowed="false"
-    tools:context=".Welcome">
+    tools:context=".ui.Welcome">
 
     <TextView
         android:id="@+id/textWelcome"
