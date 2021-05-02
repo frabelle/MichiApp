@@ -8,10 +8,11 @@ import com.uca.michiapp.room.CatDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Singleton
 
-@InstallIn
 @Module
+@InstallIn(ApplicationComponent::class)
 object RepositoryModule {
 
     @Singleton

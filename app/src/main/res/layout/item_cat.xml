@@ -27,6 +27,7 @@
             android:background="@color/purple_secondcat"
             android:textColor="@color/white"
             app:icon="@drawable/ic_baseline_favorite_border_24"
+            app:iconGravity="end"
             app:iconSize="25dp" />
 
     </LinearLayout>
