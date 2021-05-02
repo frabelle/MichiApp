@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.flow.collect
 import com.uca.michiapp.R
@@ -36,13 +37,12 @@ constructor(
         subscribeObservers()
 //        viewModel.setStateEvent()
         val layoutManager =
-            LinearLayoutManager(
+            GridLayoutManager(
                 requireActivity().applicationContext,
-                LinearLayoutManager.VERTICAL,
-                false
+                2
             )
-        layoutManager.reverseLayout = true
-        layoutManager.stackFromEnd = true
+//        layoutManager.reverseLayout = true
+//        layoutManager.stackFromEnd = true
         recyclerViewCats.layoutManager = layoutManager
         recyclerViewCats.adapter = catsAdapter
 
