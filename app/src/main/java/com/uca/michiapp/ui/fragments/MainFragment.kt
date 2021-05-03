@@ -37,12 +37,13 @@ constructor(
         subscribeObservers()
 //        viewModel.setStateEvent()
         val layoutManager =
-            GridLayoutManager(
+            LinearLayoutManager(
                 requireActivity().applicationContext,
-                2
+                LinearLayoutManager.VERTICAL,
+                false
             )
-//        layoutManager.reverseLayout = true
-//        layoutManager.stackFromEnd = true
+        layoutManager.reverseLayout = true
+        layoutManager.stackFromEnd = true
         recyclerViewCats.layoutManager = layoutManager
         recyclerViewCats.adapter = catsAdapter
 
@@ -74,7 +75,7 @@ constructor(
     }
 
     private fun displayError(message: String?) {
-        //  if (message != null) text.text = message else text.text = "Unknown error."
+        if (message != null) textDemo.text = message else textDemo.text = "Unknown error."
     }
 
 
