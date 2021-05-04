@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.collect
 import com.uca.michiapp.R
 import com.uca.michiapp.intent.Intent
 import com.uca.michiapp.ui.MainViewModel
+import com.uca.michiapp.utils.AdapterBreed
 import com.uca.michiapp.utils.AdapterCats
 import com.uca.michiapp.utils.DataState
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,7 +31,7 @@ constructor(
     private val viewModel: MainViewModel by viewModels()
 
     @Inject
-    lateinit var catsAdapter: AdapterCats
+    lateinit var breedAdapter: AdapterBreed
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -45,7 +46,7 @@ constructor(
         layoutManager.reverseLayout = true
         layoutManager.stackFromEnd = true
         recyclerViewCats.layoutManager = layoutManager
-        recyclerViewCats.adapter = catsAdapter
+        recyclerViewCats.adapter = breedAdapter
 
         subscribeObservers()
         lifecycleScope.launch {
@@ -57,9 +58,9 @@ constructor(
         lifecycleScope.launch {
             viewModel.dataState.collect {
                 when (it) {
-                    is DataState.Success -> {
+                    is DataState.SuccessBreed -> {
                         displayProgressBar(false)
-                        catsAdapter.setCats(it.cats)
+                        breedAdapter.setBreeds(it.breed)
                     }
                     is DataState.Error -> {
                         displayProgressBar(false)

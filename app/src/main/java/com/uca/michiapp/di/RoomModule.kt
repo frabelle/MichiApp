@@ -2,6 +2,7 @@ package com.uca.michiapp.di
 
 import android.content.Context
 import androidx.room.Room
+import com.uca.michiapp.room.BreedDao
 import com.uca.michiapp.room.CatDao
 import com.uca.michiapp.room.CatDatabase
 import dagger.Module
@@ -26,5 +27,11 @@ object RoomModule {
     @Provides
     fun provideCatDao(catDatabase: CatDatabase): CatDao{
         return catDatabase.catDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideBreedDao(catDatabase: CatDatabase): BreedDao{
+        return catDatabase.breedDao()
     }
 }

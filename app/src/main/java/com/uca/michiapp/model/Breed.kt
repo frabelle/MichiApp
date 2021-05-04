@@ -8,7 +8,7 @@ data class Breed (
     val origin: String,
     val description: String,
     val lifeSpan: String,
-    val wikipediaURL: String,
-    val image: Image,
+    val wikipediaURL: String?,
+    val image: Image?,
     val weight: Weight
 )

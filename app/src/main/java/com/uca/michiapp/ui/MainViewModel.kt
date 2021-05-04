@@ -6,6 +6,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.uca.michiapp.intent.Intent
+import com.uca.michiapp.repository.BreedRepository
 import com.uca.michiapp.repository.CatRepository
 import com.uca.michiapp.utils.DataState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -17,7 +18,7 @@ import kotlinx.coroutines.launch
 class MainViewModel
 @ViewModelInject
 constructor(
-    private val catRepository: CatRepository,
+    private val breedRepository: BreedRepository,
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
     val userIntent = Channel<Intent>(Channel.UNLIMITED)
@@ -34,7 +35,7 @@ constructor(
             userIntent.consumeAsFlow().collect { intnt ->
                 when (intnt) {
                     is Intent.GetCatEvent -> {
-                        catRepository.getCats()
+                        breedRepository.getBreeds()
                             .onEach {
                                 _dataState.value = it
                             }

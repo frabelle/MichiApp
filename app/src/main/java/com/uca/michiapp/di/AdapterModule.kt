@@ -1,6 +1,7 @@
 package com.uca.michiapp.di
 
 import android.app.Application
+import com.uca.michiapp.utils.AdapterBreed
 import com.uca.michiapp.utils.AdapterCats
 import dagger.Module
 import dagger.Provides
@@ -16,5 +17,11 @@ object AdapterModule {
     @Provides
     fun provideAdapterGenres(application: Application): AdapterCats {
         return AdapterCats()
+    }
+
+    @Singleton
+    @Provides
+    fun provideAdapterBreeds(application: Application): AdapterBreed {
+        return AdapterBreed()
     }
 }
