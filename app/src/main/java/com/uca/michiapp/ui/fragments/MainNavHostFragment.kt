@@ -17,4 +17,5 @@ class MainNavHostFragment: NavHostFragment() {
         super.onAttach(context)
         childFragmentManager.fragmentFactory = fragmentFactory
     }
+
 }

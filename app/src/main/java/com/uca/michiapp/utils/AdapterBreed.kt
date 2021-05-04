@@ -3,8 +3,10 @@ package com.uca.michiapp.utils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import com.uca.michiapp.R
 import com.uca.michiapp.model.Breed
 import kotlinx.android.synthetic.main.item_cat.view.*
@@ -32,10 +34,17 @@ class AdapterBreed() : RecyclerView.Adapter<AdapterBreed.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model= items[position]
         holder.breedname.text = model.name
+        holder.countryname.text = model.origin
+
+        Picasso.get()
+                .load(model.image?.url)
+                .into( holder.catImage)
     }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val breedname: TextView = view.breedName
+        val catImage: ImageView = view.catpic
+        val countryname: TextView = view.countryName
     }
 
 }

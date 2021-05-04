@@ -6,6 +6,8 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.google.android.material.appbar.MaterialToolbar
 import com.uca.michiapp.R
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,12 +25,19 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         getSupportActionBar()?.setDisplayShowTitleEnabled(false)
 
+        //activateGIF()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.appbar, menu)
         return true
+    }
+
+    fun activateGIF(){
+        val imageView: ImageView = findViewById(R.id.catpic)
+        Glide.with(this).load(R.drawable.loadingcat).into(imageView)
     }
 
 }
