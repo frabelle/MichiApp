@@ -10,4 +10,5 @@ abstract class CatDatabase: RoomDatabase() {
     }
 
     abstract fun catDao(): CatDao
+    abstract fun breedDao(): BreedDao
 }

@@ -34,6 +34,7 @@ class AdapterCats  () : RecyclerView.Adapter<AdapterCats.ViewHolder>() {
     // Binds each item in the ArrayList to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model= items[position]
+
         //holder.sizeInfo.text="${model.width} x ${model.height}"
         Picasso.get()
             .load(model.url)
