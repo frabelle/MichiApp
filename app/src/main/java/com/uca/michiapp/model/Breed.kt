@@ -10,5 +10,6 @@ data class Breed (
     val lifeSpan: String,
     val wikipediaURL: String?,
     val image: Image?,
-    val weight: Weight
+    val weight: Weight,
+    val temperament: String
 )

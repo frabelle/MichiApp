@@ -1,11 +1,13 @@
 package com.uca.michiapp.utils
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.chip.Chip
 import com.squareup.picasso.Picasso
 import com.uca.michiapp.R
 import com.uca.michiapp.model.Breed
@@ -33,8 +35,13 @@ class AdapterBreed() : RecyclerView.Adapter<AdapterBreed.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model= items[position]
+        val temp: List<String>
         holder.breedname.text = model.name
         holder.countryname.text = model.origin
+
+        temp = model.temperament.split(", ")
+        holder.temp1.text = temp[0]
+        holder.temp2.text = temp[1]
 
         Picasso.get()
                 .load(model.image?.url)
@@ -45,6 +52,8 @@ class AdapterBreed() : RecyclerView.Adapter<AdapterBreed.ViewHolder>() {
         val breedname: TextView = view.breedName
         val catImage: ImageView = view.catpic
         val countryname: TextView = view.countryName
+        val temp1: Chip = view.mood1
+        val temp2: Chip = view.mood2
     }
 
 }

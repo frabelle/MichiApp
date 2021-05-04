@@ -68,6 +68,7 @@
                 android:layout_gravity="center_vertical">
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/mood1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="2dp"
@@ -77,6 +78,7 @@
                     android:textSize="14sp"/>
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/mood2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="2dp"

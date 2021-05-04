@@ -9,6 +9,6 @@ import androidx.room.Query
 interface BreedDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(breedEntity: BreedCacheEntity): Long
-    @Query("SELECT * FROM breeds")
+    @Query("SELECT * FROM breeds ORDER BY name DESC")
     suspend fun get(): List<BreedCacheEntity>
 }

@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.uca.michiapp.utils.Converters
 
-@Database(entities = [CatCacheEntity::class, BreedCacheEntity::class], version = 3)
+@Database(entities = [CatCacheEntity::class, BreedCacheEntity::class], version = 4)
 @TypeConverters(Converters::class)
 abstract class CatDatabase: RoomDatabase() {
     companion object{

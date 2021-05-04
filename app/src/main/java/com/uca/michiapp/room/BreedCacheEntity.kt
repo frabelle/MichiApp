@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
 import com.uca.michiapp.model.Image
 import com.uca.michiapp.model.Weight
 
@@ -33,6 +35,10 @@ class BreedCacheEntity (
     var image: Image?,
 
     @ColumnInfo(name = "weight")
-    var weight: Weight
+    var weight: Weight,
+
+    @SerializedName("temperament")
+    @Expose
+    var temperament: String
 
     )

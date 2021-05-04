@@ -37,5 +37,9 @@ data class BreedNetworkEntity(
 
     @SerializedName("weight")
     @Expose
-    var weight: Weight
+    var weight: Weight,
+
+    @SerializedName("temperament")
+    @Expose
+    var temperament: String
 )

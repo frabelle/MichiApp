@@ -17,7 +17,8 @@ constructor(): EntityMapper<BreedNetworkEntity, Breed>{
                 lifeSpan = entity.life_span,
                 wikipediaURL = entity.wikipedia_url,
                 image = entity.image,
-                weight = entity.weight
+                weight = entity.weight,
+                temperament = entity.temperament
         )
     }
 
@@ -30,7 +31,8 @@ constructor(): EntityMapper<BreedNetworkEntity, Breed>{
                 life_span = domainModel.lifeSpan,
                 wikipedia_url = domainModel.wikipediaURL,
                 image = domainModel.image,
-                weight = domainModel.weight
+                weight = domainModel.weight,
+                temperament = domainModel.temperament
         )
     }
 
