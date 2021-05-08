@@ -7,7 +7,10 @@ import com.uca.michiapp.room.CatDao
 import com.uca.michiapp.utils.DataState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
+import retrofit2.HttpException
 import java.lang.Exception
+import java.net.HttpURLConnection
+import java.net.UnknownHostException
 
 class CatRepository(
 private val catDao: CatDao,
@@ -28,8 +31,15 @@ private val networkMapper: NetworkMapper
 
             val cacheCat = catDao.get()
             emit(DataState.Success(cacheMapper.mapFromEntityList(cacheCat)))
+
         }catch (e: Exception){
-            emit(DataState.Error(e))
+            if(e is HttpException || e is HttpURLConnection || e is UnknownHostException){
+                val cacheCat = catDao.get()
+                emit(DataState.Success(cacheMapper.mapFromEntityList(cacheCat)))
+            }
+            else{
+                emit(DataState.Error(e))
+            }
         }
     }
 }

@@ -46,6 +46,7 @@ class AdapterBreed() : RecyclerView.Adapter<AdapterBreed.ViewHolder>() {
         Picasso.get()
                 .load(model.image?.url)
                 .into( holder.catImage)
+
     }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){

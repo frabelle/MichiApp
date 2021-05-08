@@ -7,7 +7,11 @@ import com.uca.michiapp.room.BreedDao
 import com.uca.michiapp.utils.DataState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
+import retrofit2.HttpException
 import java.lang.Exception
+import java.net.HttpURLConnection
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 
 class BreedRepository (
     private val breedDao: BreedDao,
@@ -29,7 +33,13 @@ class BreedRepository (
             val cacheBreed = breedDao.get()
             emit(DataState.SuccessBreed(breedCacheMapper.mapFromEntityListBreed(cacheBreed)))
         }catch (e: Exception){
-            emit(DataState.Error(e))
+            if(e is HttpException || e is HttpURLConnection || e is UnknownHostException){
+                val cacheBreed = breedDao.get()
+                emit(DataState.SuccessBreed(breedCacheMapper.mapFromEntityListBreed(cacheBreed)))
+            }
+            else{
+                emit(DataState.Error(e))
+            }
         }
 
     }
