@@ -37,8 +37,7 @@ class BreedCacheEntity (
     @ColumnInfo(name = "weight")
     var weight: Weight,
 
-    @SerializedName("temperament")
-    @Expose
+    @ColumnInfo(name = "temperament")
     var temperament: String
 
     )

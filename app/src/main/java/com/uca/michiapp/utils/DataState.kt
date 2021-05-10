@@ -6,7 +6,7 @@ import java.lang.Exception
 
 sealed class DataState {
     object Idle: DataState()
-    data class Success(val cats: List<Cat>): DataState()
+    data class SuccessCat(val cats: List<Cat>): DataState()
     data class SuccessBreed(val breed: List<Breed>): DataState()
     data class Error(val exception: Exception): DataState()
     object Loading: DataState()

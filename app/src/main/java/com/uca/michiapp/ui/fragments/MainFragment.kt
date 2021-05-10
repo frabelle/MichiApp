@@ -66,14 +66,11 @@ constructor(
 
                 //Testing
                 //Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()
-                Log.d("RecyclerView", "CLICK EN EL ONITEMTAP!"+ position)
+                //Log.d("RecyclerView", "CLICK EN EL ONITEMTAP!"+ position)
 
                 val dialog = BreedFragment()
                 dialog.getCatObject(breed)
-//                val args: Bundle? = null
-//                args?.putInt("cat", position)
-//                dialog.setArguments(args)
-                activity?.let { dialog.show(it.supportFragmentManager, "Hi") }
+                activity?.let { dialog.show(it.supportFragmentManager, "DialogFragment") }
             }
         })
     }

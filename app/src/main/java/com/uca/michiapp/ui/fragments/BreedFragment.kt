@@ -48,23 +48,23 @@ class BreedFragment : DialogFragment() {
         //TESTING PASSING VALUES
         //Log.d("PASSING VALUES", breedModel?.name.toString())
 
-        view.breed.setText(breedModel?.name)
-        view.country.setText(breedModel?.origin)
-        view.weight.setText(" " + breedModel?.weight?.metric.toString()+ " kilograms")
-        view.lifespan.setText(" " + breedModel?.lifeSpan + " years")
-        view.description.setText(breedModel?.description)
+        view.breed.text = breedModel?.name
+        view.country.text = breedModel?.origin
+        view.weight.text = " ${breedModel?.weight?.metric} ${getString(R.string.kilograms)}"
+        view.lifespan.text = " ${breedModel?.lifeSpan}  ${getString(R.string.years)}"
+        view.description.text = breedModel?.description
 
         Picasso.get()
                 .load(breedModel?.image?.url)
                 .into(view.catpic)
 
-        view.btnDone.setOnClickListener({
+        view.btnDone.setOnClickListener {
             dismiss()
-        })
+        }
 
-        view.btnMoreinfo.setOnClickListener({
+        view.btnMoreinfo.setOnClickListener {
             sendingToWikipedia()
-        })
+        }
 
     }
 

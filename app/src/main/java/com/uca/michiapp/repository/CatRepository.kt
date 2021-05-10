@@ -30,12 +30,12 @@ private val networkMapper: NetworkMapper
             }
 
             val cacheCat = catDao.get()
-            emit(DataState.Success(cacheMapper.mapFromEntityList(cacheCat)))
+            emit(DataState.SuccessCat(cacheMapper.mapFromEntityList(cacheCat)))
 
         }catch (e: Exception){
             if(e is HttpException || e is HttpURLConnection || e is UnknownHostException){
                 val cacheCat = catDao.get()
-                emit(DataState.Success(cacheMapper.mapFromEntityList(cacheCat)))
+                emit(DataState.SuccessCat(cacheMapper.mapFromEntityList(cacheCat)))
             }
             else{
                 emit(DataState.Error(e))

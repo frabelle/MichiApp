@@ -31,7 +31,7 @@
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/loadingcat"
+                tools:src="@drawable/loadingcat"
                 android:scaleType="centerCrop"/>
 
         </androidx.cardview.widget.CardView>
@@ -48,7 +48,7 @@
                 android:id="@+id/breedName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Breed Name"
+                android:text="@string/breed_name"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_baseline_location_on_24"
-                android:text="Country Name"
+                android:text="@string/country"
                 android:textSize="16sp"/>
 
             <LinearLayout
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="2dp"
                     android:backgroundTint="@color/purple_cat"
-                    android:text="Mood1"
+                    android:text="@string/mood"
                     android:textColor="@color/white"
                     android:textSize="14sp"/>
 
@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="2dp"
                     android:backgroundTint="@color/purple_cat"
-                    android:text="Mood2"
+                    android:text="@string/mood"
                     android:textColor="@color/white"
                     android:textSize="14sp"/>
 
