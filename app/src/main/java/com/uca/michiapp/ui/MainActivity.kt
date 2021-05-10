@@ -15,7 +15,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,9 +35,8 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    fun activateGIF(){
-        val imageView: ImageView = findViewById(R.id.catpic)
-        Glide.with(this).load(R.drawable.loadingcat).into(imageView)
-    }
+
+
+
 
 }

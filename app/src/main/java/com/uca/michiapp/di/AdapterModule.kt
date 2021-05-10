@@ -1,6 +1,9 @@
 package com.uca.michiapp.di
 
 import android.app.Application
+import android.speech.tts.TextToSpeech
+import android.widget.AdapterView
+import com.uca.michiapp.ui.fragments.MainFragment
 import com.uca.michiapp.utils.AdapterBreed
 import com.uca.michiapp.utils.AdapterCats
 import dagger.Module
