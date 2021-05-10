@@ -70,9 +70,10 @@ class AdapterBreed() : RecyclerView.Adapter<AdapterBreed.ViewHolder>() {
             itemView.setOnClickListener(this)
         }
 
-        override fun onClick(v: View?) {
+        override fun onClick(v: View) {
             Log.d("RecyclerView", "interface "+ adapterPosition)
-            tapListener?.onItemTap(itemView,adapterPosition)
+            var model = items.get(adapterPosition)
+            tapListener?.onItemTap(model,adapterPosition)
         }
     }
 

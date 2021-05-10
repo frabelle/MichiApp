@@ -25,8 +25,6 @@ class MainActivity : AppCompatActivity(){
         setSupportActionBar(toolbar)
         getSupportActionBar()?.setDisplayShowTitleEnabled(false)
 
-        //activateGIF()
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

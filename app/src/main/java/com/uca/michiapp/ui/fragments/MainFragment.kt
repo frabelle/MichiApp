@@ -7,6 +7,7 @@ import android.widget.AdapterView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.flow.collect
 import com.uca.michiapp.R
 import com.uca.michiapp.intent.Intent
+import com.uca.michiapp.model.Breed
+import com.uca.michiapp.ui.MainActivity
+import com.uca.michiapp.ui.MainApp
 import com.uca.michiapp.ui.MainViewModel
 import com.uca.michiapp.utils.*
 import dagger.hilt.android.AndroidEntryPoint
@@ -58,9 +62,18 @@ constructor(
         }
 
         breedAdapter.setOnItemTapListener(object: ItemTapListener{
-            override fun onItemTap(v: View, position: Int) {
-                Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()
+            override fun onItemTap(breed: Breed, position: Int) {
+
+                //Testing
+                //Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()
                 Log.d("RecyclerView", "CLICK EN EL ONITEMTAP!"+ position)
+
+                val dialog = BreedFragment()
+                dialog.getCatObject(breed)
+//                val args: Bundle? = null
+//                args?.putInt("cat", position)
+//                dialog.setArguments(args)
+                activity?.let { dialog.show(it.supportFragmentManager, "Hi") }
             }
         })
     }

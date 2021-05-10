@@ -32,6 +32,7 @@ class BreedRepository (
 
             val cacheBreed = breedDao.get()
             emit(DataState.SuccessBreed(breedCacheMapper.mapFromEntityListBreed(cacheBreed)))
+
         }catch (e: Exception){
             if(e is HttpException || e is HttpURLConnection || e is UnknownHostException){
                 val cacheBreed = breedDao.get()

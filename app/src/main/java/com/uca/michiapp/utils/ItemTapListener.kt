@@ -1,9 +1,10 @@
 package com.uca.michiapp.utils
 
 import android.view.View
+import com.uca.michiapp.model.Breed
 
 interface ItemTapListener {
-    fun onItemTap(v: View, position:Int)
+    fun onItemTap(breed: Breed, position:Int)
 }
 
 
