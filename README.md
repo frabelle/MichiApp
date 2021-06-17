@@ -16,6 +16,8 @@
 
 ## Preview
 
+<img src="https://github.com/frabelle/MichiApp/blob/master/app/src/main/res/drawable/michiapp.gif" width="300" />
+
 ## API Documentation
 
 📃 Documentation of the consumed data https://docs.thecatapi.com 
