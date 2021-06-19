@@ -3,7 +3,7 @@
 ## Description
 :smiley_cat: **MichiApp** is an android app that shows information about all the breeds of cat using a free plan of an API.
 
-## Implementations
+## Features
 * SQLite Local Database
 * Dependency injection
 * Repository factory
@@ -12,7 +12,7 @@
 * Architectural pattern **MVVM**/**MVI**
 * Offline connection
 * Uniflow
-* Fragments
+* Dialog Fragment
 
 ## Preview
 
